@@ -8,6 +8,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { Drawer } from "expo-router/drawer";
 import Header from "@/components/Header";
+import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -73,6 +74,9 @@ export default function RootLayout() {
           options={{
             headerShown: true,
             title: "Home",
+            drawerIcon: ({ focused }) => (
+              <TabBarIcon name="home" color={focused ? '#007AFF' : '#333'} size={24} />
+            ),
           }}
           name="home"
         />

@@ -5,7 +5,7 @@ import { Link } from "expo-router";
 
 export default function LandingScreen() {
   return (
-    <View style={styles.page}>
+    <View style={styles.page_standalone}>
       <Text style={styles.Purrtext}>PurrEverHome</Text>
       <Text style={styles.tagtex}>Where every cat finds a forever home</Text>
       {/* insert app icon */}

@@ -19,6 +19,7 @@ export const Colors = {
     tabIconDefault: "#687076",
     tabIconSelected: tintColorLight,
   },
+  cat_containers: ["#9fb9ff","#acd29f", "#ffac7e","#ffacdf"],
   reg:{
     background:"#F98D51",
     icon: "#FFF",
