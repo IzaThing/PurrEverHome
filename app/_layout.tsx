@@ -1,26 +1,18 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Drawer } from "expo-router/drawer";
+
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
-
-import { useColorScheme } from "@/hooks/useColorScheme";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { View } from "react-native";
-import { ThemedText } from "@/components/ThemedText";
-import Header from "@/components/Header";
+
 import { StatusBar } from "expo-status-bar";
+import { Drawer } from "expo-router/drawer";
+import Header from "@/components/Header";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
@@ -38,21 +30,45 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar hidden={true} />
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Drawer
-          initialRouteName="landing"
-          screenOptions={{
-            headerShown: true,
-            header: () => <Header />,
+      <Drawer
+        screenOptions={{
+          headerShown: true,
+          header: () => <Header />,
+        }}
+      >
+        <Drawer.Screen
+          options={{
+            drawerItemStyle: { display: "none" },
+            title: "Landing Page",
           }}
-        >
-          <Drawer.Screen name="landing" />
-          <Drawer.Screen
-            options={{ drawerItemStyle: { display: "none" } }}
-            name="+not-found"
-          />
-        </Drawer>
-      </ThemeProvider>
+          name="index"
+        />
+        <Drawer.Screen
+          options={{
+            // TODO: Hide this on actual release. Uncomment line below to hide
+            // drawerItemStyle: { display: "none" },
+            headerShown: false,
+            title: "Login",
+          }}
+          name="login"
+        />
+        <Drawer.Screen
+          options={{
+            // TODO: Hide this on actual release. Uncomment line below to hide
+            // drawerItemStyle: { display: "none" },
+            headerShown: false,
+            title: "Register",
+          }}
+          name="register"
+        />
+        <Drawer.Screen
+          options={{
+            drawerItemStyle: { display: "none" },
+            title: "Not Found",
+          }}
+          name="+not-found"
+        />
+      </Drawer>
     </GestureHandlerRootView>
   );
 }

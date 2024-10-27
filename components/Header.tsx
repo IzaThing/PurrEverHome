@@ -1,6 +1,5 @@
 import * as React from "react";
 import { View, Text } from "react-native";
-import { ThemedText } from "./ThemedText";
 import { TabBarIcon } from "./navigation/TabBarIcon";
 import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";

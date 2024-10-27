@@ -1,20 +1,18 @@
-import { Link, Stack } from 'expo-router';
-import Drawer from 'expo-router/drawer';
-import { StyleSheet } from 'react-native';
+import { Link } from "expo-router";
+import Drawer from "expo-router/drawer";
+import { StyleSheet, View, Text } from "react-native";
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import React from "react";
 
 export default function NotFoundScreen() {
   return (
     <>
-      <Drawer.Screen options={{ title: 'Not Found' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">This page doesn't exist</ThemedText>
-        <Link href="/landing" style={styles.link}>
-          <ThemedText type="link">Back to home</ThemedText>
+      <View style={styles.container}>
+        <Text>This page doesn't exist</Text>
+        <Link href="/" style={styles.link}>
+          <Text>Go back</Text>
         </Link>
-      </ThemedView>
+      </View>
     </>
   );
 }
@@ -22,8 +20,8 @@ export default function NotFoundScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     padding: 20,
   },
   link: {
