@@ -70,13 +70,15 @@ const cats = [
     image: require("../../assets/images/react-logo.png"),
   },
 ];
+
 export default function HomeScreen() {
   return (
     <View style={styles.page}>
       <View style={styles.home_container}>
         <Text style={styles.text_light}>Homepage</Text>
+        {/* TODO: Add dummy filter buttons */}
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent:"center" }}>
             {cats.map((cat: cat) => (
               <CatContainer key={cat.id} cat={cat} />
             ))}
