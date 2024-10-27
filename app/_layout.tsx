@@ -39,6 +39,7 @@ export default function RootLayout() {
         <Drawer.Screen
           options={{
             drawerItemStyle: { display: "none" },
+            headerShown: false,
             title: "Landing Page",
           }}
           name="index"
@@ -67,6 +68,13 @@ export default function RootLayout() {
             title: "Not Found",
           }}
           name="+not-found"
+        />
+        <Drawer.Screen
+          options={{
+            headerShown: true,
+            title: "Home",
+          }}
+          name="home"
         />
       </Drawer>
     </GestureHandlerRootView>
