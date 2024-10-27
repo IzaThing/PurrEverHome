@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
   },
   whitebox:{
     backgroundColor:Colors.reg.View,
-    height:"50%",
-    marginTop:150,
+    height:"35%",
+    marginTop:0,
     borderRadius:20,
-    margin:15,
+    marginHorizontal:16,
   },
   heading:{
     margin:10,
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     fontWeight:"bold",
   },
   txtinput:{
+    flexDirection:"row",
     borderBlockColor:Colors.reg.txtinput,
     borderWidth:2,
     height:50,
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     width:300,
     justifyContent:"center",
     alignSelf:"center",
-    marginTop:50,
+    marginTop:20,
   },
   logbtn:{
     backgroundColor:  Colors.log.Button,
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     paddingRight:20,
   },
   Purrtext:{
-    fontSize:15,
+    fontSize:24,
     fontWeight:"bold",
     color: Colors.land.purclr,
     alignSelf:"center",
@@ -103,6 +104,18 @@ const styles = StyleSheet.create({
     alignSelf:"center",
     marginTop:30,
     marginBottom:30,
+  },
+  appLogo:{
+    width:300,
+    height:300,
+    alignSelf:"center",
+    marginTop:50,
+  },
+  authLogo:{
+    width:200,
+    height:200,
+    alignSelf:"center",
+    marginBottom: "-10%"
   },
 });
 
