@@ -2,6 +2,43 @@ import { StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
 
 const styles = StyleSheet.create({
+  categ_container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+    marginTop: -5
+  },
+  categ_button: {
+    backgroundColor: '#FFF7DF',
+    borderRadius: 12,
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    marginHorizontal: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 4
+  },
+  categ_text: {
+    fontSize: 14
+  },
+  nocontent: {
+    width:200,
+    height:200,
+    alignSelf:"center",
+  },
+  logout: {
+    flex: 1, 
+    flexDirection: "row", 
+    marginTop:80, 
+    alignItems: "center", 
+    justifyContent: "center"
+  },
+  avatar: {
+    width:100,
+    height:100,
+    alignSelf:"center",
+    marginBottom: "-10%"
+  },
   page_standalone: {
     backgroundColor: Colors.light.container,
     height: "100%",
@@ -12,11 +49,11 @@ const styles = StyleSheet.create({
   },
   home_container:{
     backgroundColor: Colors.light.container,
-    marginTop: 48,
+    marginTop: 10, //changed
     padding: 24,
-    height: "100%",
-    borderTopLeftRadius: 64,
-    borderTopRightRadius: 64
+    height: "103%", //changed
+    borderTopLeftRadius: 50, //changed
+    borderTopRightRadius: 50 //changed
   },
   text_light: {
     color: Colors.light.text,
@@ -32,7 +69,7 @@ const styles = StyleSheet.create({
   },
   whitebox:{
     backgroundColor:Colors.reg.View,
-    height:"35%",
+    height:"45%", //changed
     marginTop:0,
     borderRadius:20,
     marginHorizontal:16,
@@ -81,10 +118,11 @@ const styles = StyleSheet.create({
     width:20,
   },
   forgtp:{
-    fontSize:10,
+    fontSize:12,
     color:Colors.log.fgtp,
     alignSelf:"flex-end",
     paddingRight:20,
+    width: 120 //changed
   },
   Purrtext:{
     fontSize:24,
@@ -96,6 +134,7 @@ const styles = StyleSheet.create({
   tagtex:{
     color:Colors.land.tagtxt,
     alignSelf:"center",
+    width: 250 //changed
   },
   adpttext:{
     fontSize:30,

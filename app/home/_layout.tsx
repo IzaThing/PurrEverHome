@@ -1,8 +1,9 @@
-import React from "react";
-import { View, Text, ImageSourcePropType } from "react-native";
+import React, { useState } from "react";
+import { View, Text, ImageSourcePropType, TouchableOpacity } from "react-native";
 import styles from "@/constants/styles";
 import CatContainer from "@/components/CatContainer";
 import { ScrollView } from "react-native-gesture-handler";
+
 
 interface cat {
   id: number;
@@ -71,12 +72,28 @@ const cats = [
   },
 ];
 
+const categories = ["All", "Kittens", "Seniors", "Rescues"];
+
+
+
 export default function HomeScreen() {
+
+  const [pressed, setPressed] = useState<number | null>(null);
+  
   return (
     <View style={styles.page}>
       <View style={styles.home_container}>
-        <Text style={styles.text_light}>Homepage</Text>
-        {/* TODO: Add dummy filter buttons */}
+        <View style={styles.categ_container}>
+            {categories.map((category, index) => (
+                <TouchableOpacity 
+                    key={index} 
+                    style={[styles.categ_button, { backgroundColor: pressed === index ? "black" : "#FFF7DF" }]} 
+                    onPress={()=>setPressed(index)}
+                    >
+                    <Text style={[styles.categ_text, { color: pressed === index ? "#FFF7DF" : "black"}]}>{category}</Text>
+                </TouchableOpacity>
+            ))}
+        </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent:"center" }}>
             {cats.map((cat: cat) => (

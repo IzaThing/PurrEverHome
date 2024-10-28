@@ -18,6 +18,8 @@ export default function LoginScreen() {
     username: "",
     password: "",
   });
+
+  const [visible, setVisible] = useState(false);
   return (
     <View style={styles.loginpage}>
       <Link href="/" asChild>
@@ -26,7 +28,7 @@ export default function LoginScreen() {
         </TouchableOpacity>
       </Link>
       {/* TODO: Add login page content here */}
-      <View style={{minHeight:"10%"}}/>
+      <View style={{minHeight:"5%"}}/> 
       <Image style={styles.authLogo} source={require("../../assets/images/auth_logo.png")}/>
       <View style={styles.whitebox}>
         <Text style={styles.heading}>Login</Text>
@@ -51,11 +53,15 @@ export default function LoginScreen() {
             }}
             value={user.password}
             placeholder={"Password"}
-            secureTextEntry={true}
+            secureTextEntry={!visible}
             autoCapitalize={"none"}
           />
+          <TouchableOpacity onPress={()=>setVisible(!visible)} style={{flex:1, alignSelf: "center"}}>
+              <TabBarIcon name={visible ? "eye-off-outline" : "eye-outline"} size={20}/>
+          </TouchableOpacity>
+          
         </View>
-        <Text style={styles.forgtp}>Forgot Password</Text>
+        <Text style={styles.forgtp}>Forgot Password?</Text>
         <Link href="/home" asChild>
           <TouchableOpacity style={styles.logbtn}>
             <Text style={styles.txtbtn}>Login</Text>

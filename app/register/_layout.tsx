@@ -20,6 +20,9 @@ export default function RegisterScreen() {
     password: "",
     email: "",
   });
+
+  const [visible, setVisible] = useState(false);
+  
   return (
     <View style={styles.Regpage}>
       <Link href="/" asChild>
@@ -29,7 +32,7 @@ export default function RegisterScreen() {
       </Link>
 
       {/* TODO Add register page content here */}
-      <View style={{ minHeight: "10%" }} />
+      <View style={{ minHeight: "5%" }} />
       <Image
         style={styles.authLogo}
         source={require("../../assets/images/auth_logo.png")}
@@ -70,9 +73,13 @@ export default function RegisterScreen() {
             }}
             value={user.password}
             placeholder={"Password"}
-            secureTextEntry={true}
+            secureTextEntry={!visible}
             autoCapitalize={"none"}
           />
+
+          <TouchableOpacity onPress={()=>setVisible(!visible)} style={{flex:1, alignSelf: "center"}}>
+              <TabBarIcon name={visible ? "eye-off-outline" : "eye-outline"} size={20}/>
+          </TouchableOpacity>
         </View>
         <Link href="/login" asChild>
           <TouchableOpacity style={styles.regbtn}>

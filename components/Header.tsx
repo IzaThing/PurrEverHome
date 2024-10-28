@@ -20,7 +20,7 @@ export default function Header() {
       <View
         style={{
           flexDirection: "row",
-          paddingTop: 8,
+          paddingTop: 20,
           gap: 16,
           alignContent: "center",
           alignItems: "center",
@@ -42,7 +42,7 @@ export default function Header() {
         {/* Second Container - Location Display */}
         <View
           style={{
-            flex: 1,
+            flex: 2,
             flexDirection: "row",
             alignItems: "center",
           }}
@@ -75,7 +75,7 @@ export default function Header() {
       <Text
         style={{
           paddingLeft: 16,
-          paddingTop: 16,
+          paddingTop: 30,
           color: "#FFFFFF",
           fontSize: 24,
           fontWeight: "bold",

@@ -9,6 +9,8 @@ import { StatusBar } from "expo-status-bar";
 import { Drawer } from "expo-router/drawer";
 import Header from "@/components/Header";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
+import { Image } from "react-native";
+import CustomDrawerContent from "@/components/navigation/CustomDrawerContent";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -35,7 +37,13 @@ export default function RootLayout() {
         screenOptions={{
           headerShown: true,
           header: () => <Header />,
+          drawerStyle: {
+            borderRadius: 25,
+            marginLeft: -20,
+            paddingLeft: 20
+          }
         }}
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
       >
         <Drawer.Screen
           options={{
@@ -47,8 +55,7 @@ export default function RootLayout() {
         />
         <Drawer.Screen
           options={{
-            // TODO: Hide this on actual release. Uncomment line below to hide
-            // drawerItemStyle: { display: "none" },
+            drawerItemStyle: { display: "none" },
             headerShown: false,
             title: "Login",
           }}
@@ -56,8 +63,7 @@ export default function RootLayout() {
         />
         <Drawer.Screen
           options={{
-            // TODO: Hide this on actual release. Uncomment line below to hide
-            // drawerItemStyle: { display: "none" },
+            drawerItemStyle: { display: "none" },
             headerShown: false,
             title: "Register",
           }}
@@ -70,17 +76,78 @@ export default function RootLayout() {
           }}
           name="+not-found"
         />
+      
+
         <Drawer.Screen
           options={{
             headerShown: true,
             title: "Home",
             drawerIcon: ({ focused }) => (
-              <TabBarIcon name="home" color={focused ? '#007AFF' : '#333'} size={24} />
+              <TabBarIcon name={focused ? "home" : "home-outline"} color={focused ? '#007AFF' : '#333'} size={24} />
             ),
           }}
           name="home"
         />
+
+        <Drawer.Screen
+          options={{
+            headerShown: true,
+            title: "Search",
+            drawerIcon: ({ focused }) => (
+              <TabBarIcon name={focused ? "search" : "search-outline"} color={focused ? '#007AFF' : '#333'} size={24} />
+            ),
+          }}
+          name="search"
+        />
+
+        <Drawer.Screen
+          options={{
+            headerShown: true,
+            title: "Favorites",
+            drawerIcon: ({ focused }) => (
+              <TabBarIcon name={focused ? "heart" : "heart-outline"} color={focused ? '#007AFF' : '#333'} size={24} />
+            ),
+          }}
+          name="favorites"
+        />
+
+        <Drawer.Screen
+          options={{
+            headerShown: true,
+            title: "View Profile",
+            drawerIcon: ({ focused }) => (
+              <TabBarIcon name={focused ? "person" : "person-outline"} color={focused ? '#007AFF' : '#333'} size={24} />
+            ),
+          }}
+          name="view-profile"
+        />
+
+        <Drawer.Screen
+          options={{
+            headerShown: true,
+            title: "Applications",
+            drawerIcon: ({ focused }) => (
+              <TabBarIcon name={focused ? "mail" : "mail-outline"} color={focused ? '#007AFF' : '#333'} size={24} />
+            ),
+          }}
+          name="applications"
+        />
+
+        <Drawer.Screen
+          options={{
+            headerShown: true,
+            title: "Settings",
+            drawerIcon: ({ focused }) => (
+              <TabBarIcon name={focused ? "settings" : "settings-outline"} color={focused ? '#007AFF' : '#333'} size={24} />
+            ),
+          }}
+          name="settings"
+        />
+
+        
       </Drawer>
+
+      
     </GestureHandlerRootView>
   );
 }

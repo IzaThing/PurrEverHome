@@ -25,15 +25,16 @@ export default function CatContainer(props: props) {
         backgroundColor: color,
         justifyContent: "center",
         flexDirection: "column",
-        padding: 16,
+        padding: 10, //changed
         borderRadius: 16,
         margin: 8,
+        elevation: 4
       }}
     >
       <Image
         style={{
-          width: 128,
-          height: 128,
+          width: 130,
+          height: 130,
           backgroundColor: "black",
           borderRadius: 16,
         }}
