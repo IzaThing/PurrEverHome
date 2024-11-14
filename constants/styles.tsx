@@ -2,6 +2,27 @@ import { StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
 
 const styles = StyleSheet.create({
+  notifsbackground: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(101, 136, 230, 0.7)', // semi-transparent background
+  },
+  notifsmodal: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    elevation: 5,
+    width: 325,
+  },
+  notifstext: {
+    color: 'black',
+    fontWeight: 'bold',
+    textAlign: 'left',
+    fontSize: 30,
+    marginBottom: 30 
+  },
+  
   categ_container: {
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -5,8 +5,8 @@ import styles from "../../constants/styles";
 import { useState } from "react";
 import { Link, router, useFocusEffect } from "expo-router";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-import { auth } from "../../FirebaseConfig"; // Import the auth instance
-import { createUserWithEmailAndPassword } from "firebase/auth"; // Import the correct method from Firebase Web SDK
+import { auth } from "../../FirebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function RegisterScreen() {
   const [user, setUser] = useState({
@@ -24,7 +24,6 @@ export default function RegisterScreen() {
 
   const handleRegister = async () => {
     try {
-      // Call the Firebase Web SDK method to create a new user
       await createUserWithEmailAndPassword(auth, user.email, user.password);
       Alert.alert("Registration Successful!");
       router.push({ pathname: "/home", params: { username: user.username } });
@@ -45,7 +44,6 @@ export default function RegisterScreen() {
         </TouchableOpacity>
       </Link>
 
-      {/* TODO Add register page content here */}
       <View style={{ minHeight: "5%" }} />
       <Image
         style={styles.authLogo}
@@ -54,7 +52,7 @@ export default function RegisterScreen() {
       <View style={styles.whitebox}>
         <Text style={styles.heading}>Register</Text>
         <View style={styles.txtinput}>
-          <TabBarIcon name="person" style={{flex:1}}/>
+          <TabBarIcon name="person-outline" style={{flex:1}}/>
           <TextInput
           style={{paddingLeft:8, flex: 9}}
             onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => {
@@ -67,7 +65,7 @@ export default function RegisterScreen() {
         </View>
 
         <View style={styles.txtinput}>
-          <TabBarIcon name="mail" style={{flex:1}}/>
+          <TabBarIcon name="mail-outline" style={{flex:1}}/>
           <TextInput
           style={{paddingLeft:8, flex:9}}
             onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => {
@@ -79,7 +77,7 @@ export default function RegisterScreen() {
           />
         </View>
         <View style={styles.txtinput}>
-          <TabBarIcon name="lock-closed" style={{flex:1}}/>
+          <TabBarIcon name="lock-closed-outline" style={{flex:1}}/>
           <TextInput
           style={{paddingLeft:8, flex:9}}
             onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => {

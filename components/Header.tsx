@@ -3,12 +3,20 @@ import { View, Text } from "react-native";
 import { TabBarIcon } from "./navigation/TabBarIcon";
 import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";
+import { useState } from "react";
+import Notifications from "./Notifications";
 
 export default function Header() {
   const navigation = useNavigation();
   const user = {
     username: "USERNAME",
   };
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => setModalVisible(true);
+  const closeModal = () => setModalVisible(false);
+
   return (
     <View
       style={{
@@ -68,10 +76,14 @@ export default function Header() {
           <TabBarIcon
             name={"notifications"}
             color="#FFFFFF"
-            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+            onPress={openModal}
           />
         </View>
       </View>
+      
+      {/* Render Notifications Modal */}
+      <Notifications isVisible={modalVisible} onClose={closeModal} />
+
       <Text
         style={{
           paddingLeft: 16,

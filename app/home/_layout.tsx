@@ -17,56 +17,56 @@ const cats = [
     id: 1,
     name: "Maki",
     location: "Camaman-an",
-    birthday: "Still a baby",
+    birthday: "4 Years",
     image: require("../../assets/images/cat1.png"),
   },
   {
     id: 2,
-    name: "Kokot",
+    name: "Princess",
     location: "Camaman-an",
-    birthday: "Still a baby",
+    birthday: "1 Year",
     image: require("../../assets/images/cat2.png"),
   },
   {
     id: 3,
-    name: "Makikoy",
-    location: "Camaman-an",
-    birthday: "Still a baby",
+    name: "Zoey",
+    location: "Bugo ",
+    birthday: "3 Months",
     image: require("../../assets/images/cat3.png"),
   },
   {
     id: 4,
-    name: "Kokooy",
-    location: "Camaman-an",
-    birthday: "Still a baby",
+    name: "Muffin",
+    location: "Tablon",
+    birthday: "2 Years",
     image: require("../../assets/images/cat4.png"),
   },
   {
     id: 5,
-    name: "Maki",
-    location: "Camaman-an",
-    birthday: "Still a baby",
+    name: "Squid",
+    location: "Puerto",
+    birthday: "1 Year",
     image: require("../../assets/images/cat5.png"),
   },
   {
     id: 6,
-    name: "Kokot",
-    location: "Camaman-an",
-    birthday: "Still a baby",
+    name: "Suzie",
+    location: "Bugo ",
+    birthday: "4 Years",
     image: require("../../assets/images/cat6.png"),
   },
   {
     id: 7,
-    name: "Makikoy",
-    location: "Camaman-an",
-    birthday: "Still a baby",
+    name: "Kokot",
+    location: "Bulua",
+    birthday: "2 Years",
     image: require("../../assets/images/cat7.png"),
   },
   {
     id: 8,
-    name: "Kokooy",
-    location: "Camaman-an",
-    birthday: "Still a baby",
+    name: "Schumi",
+    location: "Gusa",
+    birthday: "3 Months",
     image: require("../../assets/images/cat8.png"),
   },
 ];
@@ -100,7 +100,6 @@ export default function HomeScreen() {
             ))}
           </View>
         </ScrollView>
-        {/* TODO: Add landing page content */}
       </View>
     </View>
   );

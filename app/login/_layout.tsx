@@ -22,14 +22,10 @@ export default function LoginScreen() {
 
   const handleLogin = async () => {
     try {
-      // Sign in the user using the auth instance and credentials
       await signInWithEmailAndPassword(auth, user.email, user.password);
       console.log("User signed in successfully!");
-
-      // Redirect to the home screen after successful login
       router.push("/home");
     } catch (error) {
-      // Handle authentication errors
       if (error instanceof Error) {
         Alert.alert("Authentication Error", "Invalid email or password.");
       } else {
@@ -51,7 +47,7 @@ export default function LoginScreen() {
       <View style={styles.whitebox}>
         <Text style={styles.heading}>Login</Text>
         <View style={styles.txtinput}>
-          <TabBarIcon name="mail" style={{flex:1}}/>
+          <TabBarIcon name="mail-outline" style={{flex:1}}/>
           <TextInput
             style={{paddingLeft:8, flex:9}}
             onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => {
@@ -63,7 +59,7 @@ export default function LoginScreen() {
           />
         </View>
         <View style={styles.txtinput}>
-          <TabBarIcon name="lock-closed" style={{flex:1}}/>
+          <TabBarIcon name="lock-closed-outline" style={{flex:1}}/>
           <TextInput
             style={{paddingLeft:8, flex:9}}
             onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => {
