@@ -77,7 +77,7 @@ const categories = ["All", "Kittens", "Seniors", "Rescues"];
 
 export default function HomeScreen() {
 
-  const [pressed, setPressed] = useState<number | null>(null);
+  const [pressed, setPressed] = useState(0);
   
   return (
     <View style={styles.page}>

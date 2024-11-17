@@ -1,33 +1,38 @@
-import { useFonts } from "expo-font";
-
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-
 import { StatusBar } from "expo-status-bar";
 import { Drawer } from "expo-router/drawer";
 import Header from "@/components/Header";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-import { Image } from "react-native";
 import CustomDrawerContent from "@/components/navigation/CustomDrawerContent";
+
+import { 
+  Inter_500Medium, 
+  Inter_600SemiBold, 
+  Inter_800ExtraBold, 
+  useFonts 
+} from '@expo-google-fonts/inter';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+  const [fontsLoaded] = useFonts({
+    Inter_500Medium,
+    Inter_600SemiBold,
+    Inter_800ExtraBold,
   });
 
   useEffect(() => {
-    if (loaded) {
+    if (fontsLoaded) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [fontsLoaded]);
 
-  if (!loaded) {
-    return null;
+  if (!fontsLoaded) {
+    return null;  
   }
 
   return (
@@ -36,12 +41,16 @@ export default function RootLayout() {
       <Drawer
         screenOptions={{
           headerShown: true,
+          headerTitleStyle: {
+            fontFamily: "Inter_800ExtraBold",
+          }, 
           header: () => <Header />,
           drawerStyle: {
             borderRadius: 25,
             marginLeft: -20,
-            paddingLeft: 20
-          }
+            paddingLeft: 20,
+          },
+          overlayColor: 'rgba(101, 136, 230, 0.7)'
         }}
         drawerContent={(props) => <CustomDrawerContent {...props} />}
       >

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { setLogLevel } from "firebase/app";
 
 // Firebase configuration object
 const firebaseConfig = {
@@ -15,8 +16,10 @@ const firebaseConfig = {
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
 
+setLogLevel("error");
+
 // Get the authentication instance
 const auth = getAuth(app);
 
-export { auth }; // Export the auth instance
+export { auth };
 export default app;

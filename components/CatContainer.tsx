@@ -41,7 +41,7 @@ export default function CatContainer(props: props) {
         source={props.cat.image}
       />
       <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
-        <Text style={{ flex: 9, fontWeight: "bold" }}>{props.cat.name}</Text>
+        <Text style={{ flex: 9, fontFamily: "Inter_800ExtraBold" }}>{props.cat.name}</Text>
         <TouchableOpacity onPress={()=>setLiked(!liked)}>
           <TabBarIcon
             name="heart"
@@ -53,11 +53,11 @@ export default function CatContainer(props: props) {
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
         <TabBarIcon name="home" size={16} />
-        <Text style={{ fontSize: 12 }}>{props.cat.location}</Text>
+        <Text style={{ fontSize: 12, fontFamily: "Inter_500Medium" }}>{props.cat.location}</Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
         <TabBarIcon name="calendar" size={16} />
-        <Text style={{ fontSize: 12 }}>{props.cat.birthday}</Text>
+        <Text style={{ fontSize: 12, fontFamily: "Inter_500Medium" }}>{props.cat.birthday}</Text>
       </View>
     </View>
   );

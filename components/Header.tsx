@@ -60,7 +60,7 @@ export default function Header() {
             color="#FFFFFF"
             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
           />
-          <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "bold" }}>
+          <Text style={{ color: "#FFFFFF", fontSize: 16, fontFamily: "Inter_600SemiBold" }}>
             Cagayan de Oro City
           </Text>
         </View>
@@ -90,7 +90,7 @@ export default function Header() {
           paddingTop: 30,
           color: "#FFFFFF",
           fontSize: 24,
-          fontWeight: "bold",
+          fontFamily: "Inter_800ExtraBold",
         }}
       >
         Hello {user.username}!

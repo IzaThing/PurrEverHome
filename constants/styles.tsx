@@ -17,10 +17,10 @@ const styles = StyleSheet.create({
   },
   notifstext: {
     color: 'black',
-    fontWeight: 'bold',
+    fontFamily: "Inter_800ExtraBold",
     textAlign: 'left',
     fontSize: 30,
-    marginBottom: 30 
+    marginBottom: 30
   },
   
   categ_container: {
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     elevation: 4
   },
   categ_text: {
-    fontSize: 14
+    fontSize: 14,
+    fontFamily: "Inter_600SemiBold"
   },
   nocontent: {
     width:200,
@@ -86,19 +87,18 @@ const styles = StyleSheet.create({
   },
   loginpage:{
     backgroundColor: Colors.log.background,
-    height: "100%",
+    flex: 1,
   },
   whitebox:{
     backgroundColor:Colors.reg.View,
-    height:"45%", //changed
-    marginTop:0,
     borderRadius:20,
     marginHorizontal:16,
+    paddingBottom: 20,
   },
   heading:{
     margin:10,
     fontSize:40,
-    fontWeight:"bold",
+    fontFamily: "Inter_800ExtraBold", 
   },
   txtinput:{
     flexDirection:"row",
@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
     marginTop:50,
   },
   txtbtn:{
-    fontWeight:"bold",
     alignSelf:"center",
     color:Colors.reg.regtxtbtn,
+    fontFamily: "Inter_500Medium"
   },
   logo:{
     height:20,
@@ -142,12 +142,13 @@ const styles = StyleSheet.create({
     fontSize:12,
     color:Colors.log.fgtp,
     alignSelf:"flex-end",
-    paddingRight:20,
-    width: 120 //changed
+    paddingRight:10,
+    width: 120, //changed
+    fontFamily: "Inter_500Medium"
   },
   Purrtext:{
     fontSize:24,
-    fontWeight:"bold",
+    fontFamily: "Inter_800ExtraBold", 
     color: Colors.land.purclr,
     alignSelf:"center",
     marginTop:30,
@@ -155,15 +156,15 @@ const styles = StyleSheet.create({
   tagtex:{
     color:Colors.land.tagtxt,
     alignSelf:"center",
-    width: 250 //changed
+    fontFamily: "Inter_500Medium"
   },
   adpttext:{
     fontSize:30,
-    fontWeight:"bold",
     color: Colors.land.purclr,
     alignSelf:"center",
     marginTop:30,
     marginBottom:30,
+    fontFamily: "Inter_800ExtraBold"
   },
   appLogo:{
     width:300,
